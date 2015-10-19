@@ -1,0 +1,7 @@
+plugins:
+  affiliate_enabled:
+    default: true
+    client: true
+  affiliate_amazon_tag:
+    default: ''
+    client: true

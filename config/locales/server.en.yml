@@ -1,0 +1,5 @@
+en:
+  site_settings:
+    affiliate_enabled: "Enable the affiliate plugin. If you change this, you must rebake all posts with: \"rake posts:rebake\"."
+    affiliate_amazon_tag: "Your amazon associates id."
+
