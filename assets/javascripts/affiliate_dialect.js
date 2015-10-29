@@ -1,7 +1,7 @@
 (function() {
 
-  var AMAZON_DOMAIN_EXTRACTOR_REGEX = /amazon\.([^\?\/\b]{2,})/i;
-  var AMAZON_ASIN_EXTRACTOR_REGEX = /\/([A-Z0-9]{10})[\?\/\b]/i;
+  var AMAZON_DOMAIN_EXTRACTOR_REGEX = /amazon\.([^\?\/]{2,})/i;
+  var AMAZON_ASIN_EXTRACTOR_REGEX = /\/([A-Z0-9]{10})(?:[\?\/]|$)/i;
 
   Discourse.Dialect.on("parseNode", function(event) {
     if (Discourse.SiteSettings.affiliate_enabled) {
