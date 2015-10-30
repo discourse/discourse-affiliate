@@ -1,26 +1,26 @@
 (function() {
 
+  var AMAZON_LINK_REGEX = /((?:https?:)?(?:\/\/)?(?:www\.)?amazon\.[\B\S]+)/ig;
   var AMAZON_DOMAIN_EXTRACTOR_REGEX = /amazon\.([^\?\/]{2,})/i;
   var AMAZON_ASIN_EXTRACTOR_REGEX = /\/([A-Z0-9]{10})(?:[\?\/]|$)/i;
 
-  Discourse.Dialect.on("parseNode", function(event) {
+  Discourse.Dialect.addPreProcessor(function(text) {
     if (Discourse.SiteSettings.affiliate_enabled) {
-      var node = event.node;
-      if (node[0] === "a") {
-        var href = node[1].href;
+      text = text.replace(AMAZON_LINK_REGEX, function(href) {
         if (AMAZON_DOMAIN_EXTRACTOR_REGEX.test(href)) {
           var domain = AMAZON_DOMAIN_EXTRACTOR_REGEX.exec(href)[1];
           if (AMAZON_ASIN_EXTRACTOR_REGEX.test(href)) {
             var asin = AMAZON_ASIN_EXTRACTOR_REGEX.exec(href)[1];
-            href = "//www.amazon." + domain + "/dp/" + asin;
+            href = "https://www.amazon." + domain + "/dp/" + asin;
             if (Discourse.SiteSettings.affiliate_amazon_tag.length > 0) {
               href += "?tag=" + Discourse.SiteSettings.affiliate_amazon_tag;
             }
-            node[1].href = href;
           }
         }
-      }
+        return href;
+      });
     }
+    return text;
   });
 
 })();
