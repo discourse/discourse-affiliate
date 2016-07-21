@@ -1,5 +1,7 @@
 (function() {
 
+  if (Discourse.dialect_deprecated) { return; }
+
   var AMAZON_LINK_REGEX = /((?:https?:)?(?:\/\/)?(?:www\.)?amazon\.[^\b\s"'<>()]+)/ig;
   var AMAZON_DOMAIN_EXTRACTOR_REGEX = /amazon\.([^\?\/]{2,})/i;
   var AMAZON_ASIN_EXTRACTOR_REGEX = /\/([A-Z0-9]{10})(?:[\?\/%]|$)/i;
