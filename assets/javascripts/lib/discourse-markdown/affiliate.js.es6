@@ -18,7 +18,7 @@ export function setup(helper) {
           const asin = AMAZON_ASIN_EXTRACTOR_REGEX.exec(href)[1];
           href = `https://www.amazon.${domain}/dp/${asin}`;
 
-          const tag = helper.getOptions().amazonTag;
+          const amazonTag = helper.getOptions().amazonTag;
           if (amazonTag && amazonTag.length > 0) {
             href += "?tag=" + amazonTag;
           }
