@@ -3,7 +3,8 @@ const AMAZON_ASIN_REGEX = /\/([A-Z0-9]{10})(?:[\?\/%]|$)/i;
 
 export function amazon(text, helper) {
   const tags = helper.getOptions().tags;
-  for (const domain of AMAZON_DOMAINS) {
+
+  AMAZON_DOMAINS.forEach(domain => {
     if (tags[domain]) {
       const linkRegex = new RegExp(`((?:https?:)?(?:\\/\\/)?(?:www\\.)?(?:smile\\.)?${domain.replace(".", "\\.")}[^\\b\\s"'<>\\(\\)\\[\\]]+)`, "ig");
       text = text.replace(linkRegex, href => {
@@ -15,6 +16,7 @@ export function amazon(text, helper) {
         return href;
       });
     }
-  }
+  });
+
   return text;
 }
