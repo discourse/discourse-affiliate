@@ -7,3 +7,13 @@
 enabled_site_setting :affiliate_enabled
 
 register_asset "javascripts/affiliate_dialect.js", :server_side
+
+after_initialize do
+
+  # rename "affiliate_amazon_tag" site setting to "affiliate_amazon_com"
+  if SiteSetting.where(name: "affiliate_amazon_tag").exists?
+    SiteSetting.exec_sql("UPDATE site_settings SET name = 'affiliate_amazon_com' WHERE name = 'affiliate_amazon_tag'")
+    SiteSetting.refresh!
+  end
+
+end

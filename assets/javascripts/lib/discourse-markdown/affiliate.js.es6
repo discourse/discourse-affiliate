@@ -1,32 +1,20 @@
 import { registerOption } from 'pretty-text/pretty-text';
-
-const AMAZON_LINK_REGEX = /((?:https?:)?(?:\/\/)?(?:www\.)?(?:smile\.)?amazon\.[^\b\s"'<>()]+)/ig;
-const AMAZON_DOMAIN_EXTRACTOR_REGEX = /amazon\.([^\?\/]{2,})/i;
-const AMAZON_ASIN_EXTRACTOR_REGEX = /\/([A-Z0-9]{10})(?:[\?\/%]|$)/i;
+import { amazon } from 'discourse/plugins/discourse-affiliate/lib/amazon';
+import { ldlc } from 'discourse/plugins/discourse-affiliate/lib/ldlc';
 
 registerOption((siteSettings, opts) => {
-  opts.features.affiliate = siteSettings.affiliate_enabled;
-  opts.amazonTag = siteSettings.affiliate_amazon_tag;
+  opts.tags = {};
+  if (opts.features.affiliate = siteSettings.affiliate_enabled) {
+    for (const name in siteSettings) {
+      if (/^affiliate_.+_.+$/.test(name) && siteSettings[name].trim().length > 0) {
+        const domain = /^affiliate_(.+)$/.exec(name)[1].replace("_", ".");
+        opts.tags[domain] = siteSettings[name];
+      }
+    }
+  }
 });
 
 export function setup(helper) {
-  helper.addPreProcessor(text => {
-    return text.replace(AMAZON_LINK_REGEX, href => {
-      if (AMAZON_DOMAIN_EXTRACTOR_REGEX.test(href)) {
-        const domain = AMAZON_DOMAIN_EXTRACTOR_REGEX.exec(href)[1];
-        const prefix = (href.indexOf("smile.amazon") !== -1) ? "smile" : "www";
-
-        if (AMAZON_ASIN_EXTRACTOR_REGEX.test(href)) {
-          const asin = AMAZON_ASIN_EXTRACTOR_REGEX.exec(href)[1];
-          href = `https://${prefix}.amazon.${domain}/dp/${asin}`;
-
-          const amazonTag = helper.getOptions().amazonTag;
-          if (amazonTag && amazonTag.length > 0) {
-            href += "?tag=" + amazonTag;
-          }
-        }
-      }
-      return href;
-    });
-  });
+  helper.addPreProcessor(text => amazon(text, helper));
+  helper.addPreProcessor(text => ldlc(text, helper));
 }
