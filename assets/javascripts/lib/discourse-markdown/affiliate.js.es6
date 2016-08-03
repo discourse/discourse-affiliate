@@ -26,6 +26,13 @@ function amazon(text, helper) {
     }
   });
 
+  // handle short links (eg. `https://amzn.com/B00NZJFQB6`)
+  if (tags["amazon.com"]) {
+    text = text.replace(/https?:\/\/amzn\.com\/([A-Z0-9]{10})[^\b\s"'<>\(\)\[\]]*/ig, (_, asin) => {
+      return `https://amzn.com/${asin}?tag=${tags["amazon.com"]}`;
+    });
+  }
+
   return text;
 }
 
