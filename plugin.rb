@@ -6,8 +6,6 @@
 
 enabled_site_setting :affiliate_enabled
 
-register_asset "javascripts/affiliate_dialect.js", :server_side
-
 after_initialize do
 
   require File.expand_path(File.dirname(__FILE__) + '/lib/affiliate_processor')
