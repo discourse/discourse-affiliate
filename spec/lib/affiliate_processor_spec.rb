@@ -2,14 +2,6 @@ require 'rails_helper'
 
 describe AffiliateProcessor do
 
-  before do
-    SiteSetting.enable_experimental_markdown_it = true
-  end
-
-  after do
-    SiteSetting.enable_experimental_markdown_it = false
-  end
-
   def r(url)
     AffiliateProcessor.apply(url)
   end
