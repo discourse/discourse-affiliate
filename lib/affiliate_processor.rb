@@ -6,7 +6,10 @@ class AffiliateProcessor
     lambda do |url, uri|
       code = SiteSetting.send("affiliate_amazon_#{domain.gsub('.', '_')}")
       if code.present?
-        uri.query = "tag=#{code}"
+        original_query_array = URI.decode_www_form(String(uri.query)).to_h
+        query_array = [["tag", code]]
+        query_array << ['node', original_query_array['node']] if original_query_array['node'].present?
+        uri.query = URI.encode_www_form(query_array)
         uri.to_s
       else
         url
