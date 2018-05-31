@@ -29,6 +29,7 @@ describe AffiliateProcessor do
   end
 
   it 'can apply codes to post in post processor' do
+    SiteSetting.queue_jobs = false
     SiteSetting.affiliate_amazon_com = 'sams-shop'
 
     post = create_post(raw: 'this is an www.amazon.com/link?testing yay')
