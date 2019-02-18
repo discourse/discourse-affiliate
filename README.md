@@ -1,15 +1,8 @@
 ## discourse-affiliate
 
-Official affiliation plugin for Discourse.
+The Discourse Affiliate plugin can help you monetize your Discourse forum. When users create links and other users click through those links and buy products from Amazon, they earn referral fees.
 
-## Usage
-
-Go to /admin/site_settings/category/plugins, enter your affiliation ids and enable the plugin via the `affiliate_enabled` site setting.
-
-## Installation
-
-Follow our [Install a Plugin](https://meta.discourse.org/t/install-a-plugin/19157) howto, using
-`git clone https://github.com/discourse/discourse-affiliate.git` as the plugin command.
+Official documentation at https://meta.discourse.org/t/discourse-affiliate-plugin/101937
 
 ## Issues
 
