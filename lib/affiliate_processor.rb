@@ -4,7 +4,7 @@ class AffiliateProcessor
 
   def self.create_amazon_rule(domain)
     lambda do |url, uri|
-      code = SiteSetting.send("affiliate_amazon_#{domain.gsub('.', '_')}")
+      code = SiteSetting.get("affiliate_amazon_#{domain.gsub('.', '_')}")
       if code.present?
         original_query_array = URI.decode_www_form(String(uri.query)).to_h
         query_array = [["tag", code]]

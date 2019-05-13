@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # name: discourse-affiliate
 # about: Official affiliation plugin for Discourse
 # version: 0.2
