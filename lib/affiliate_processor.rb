@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-#
+
 class AffiliateProcessor
 
   def self.create_amazon_rule(domain)
