@@ -1,6 +1,6 @@
 en:
   site_settings:
-    affiliate_enabled: "Enable the Affiliate plugin. If you change this, you must rebake all posts with: \"rake posts:rebake\"."
+    affiliate_enabled: 'Enable the Affiliate plugin. If you change this, you must rebake all posts with: "rake posts:rebake".'
     affiliate_amazon_ca: "Your amazon.ca (Canada) Associates ID."
     affiliate_amazon_cn: "Your amazon.cn (China) Associates ID."
     affiliate_amazon_co_jp: "Your amazon.co.jp (Japan) Associates ID."

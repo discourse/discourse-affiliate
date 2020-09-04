@@ -3,48 +3,48 @@ plugins:
     default: true
     client: true
   affiliate_amazon_ca:
-    default: ''
+    default: ""
     client: true
   affiliate_amazon_cn:
-    default: ''
+    default: ""
     client: true
   affiliate_amazon_co_jp:
-    default: ''
+    default: ""
     client: true
   affiliate_amazon_co_uk:
-    default: ''
+    default: ""
     client: true
   affiliate_amazon_com:
-    default: ''
+    default: ""
     client: true
   affiliate_amazon_com_au:
-    default: ''
+    default: ""
     client: true
   affiliate_amazon_com_br:
-    default: ''
+    default: ""
     client: true
   affiliate_amazon_com_mx:
-    default: ''
+    default: ""
     client: true
   affiliate_amazon_de:
-    default: ''
+    default: ""
     client: true
   affiliate_amazon_es:
-    default: ''
+    default: ""
     client: true
   affiliate_amazon_fr:
-    default: ''
+    default: ""
     client: true
   affiliate_amazon_in:
-    default: ''
+    default: ""
     client: true
   affiliate_amazon_it:
-    default: ''
+    default: ""
     client: true
   affiliate_amazon_nl:
-    default: ''
+    default: ""
     client: true
   affiliate_ldlc_com:
-    default: ''
+    default: ""
     client: true
     regex: "^[a-zA-Z0-9]+$"
