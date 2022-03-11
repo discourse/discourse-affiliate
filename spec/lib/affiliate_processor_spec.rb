@@ -37,6 +37,7 @@ describe AffiliateProcessor do
     SiteSetting.queue_jobs = false
     SiteSetting.affiliate_amazon_com = 'sams-shop'
 
+    stub_request(:get, "http://www.amazon.com/link?testing").to_return(status: 200, body: "")
     post = create_post(raw: 'this is an www.amazon.com/link?testing yay')
     post.reload
 
