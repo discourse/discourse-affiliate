@@ -9,13 +9,10 @@
 enabled_site_setting :affiliate_enabled
 
 after_initialize do
-
-  require File.expand_path(File.dirname(__FILE__) + '/lib/affiliate_processor')
+  require File.expand_path(File.dirname(__FILE__) + "/lib/affiliate_processor")
 
   DiscourseEvent.on(:post_process_cooked) do |doc, post|
-    doc.css('a[href]').each do |a|
-      a['href'] = AffiliateProcessor.apply(a['href'])
-    end
+    doc.css("a[href]").each { |a| a["href"] = AffiliateProcessor.apply(a["href"]) }
     true
   end
 
@@ -25,12 +22,13 @@ after_initialize do
   if !skip_db
     begin
       if SiteSetting.where(name: "affiliate_amazon_tag").exists?
-        SiteSetting.exec_sql("UPDATE site_settings SET name = 'affiliate_amazon_com' WHERE name = 'affiliate_amazon_tag'")
+        SiteSetting.exec_sql(
+          "UPDATE site_settings SET name = 'affiliate_amazon_com' WHERE name = 'affiliate_amazon_tag'",
+        )
         SiteSetting.refresh!
       end
     rescue ActiveRecord::NoDatabaseError
       nil
     end
   end
-
 end
