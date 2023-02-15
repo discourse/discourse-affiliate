@@ -6,9 +6,9 @@
 
 ru:
   site_settings:
-    affiliate_enabled: 'Включите плагин филиалов. Если вы измените эту настройку, то необходимо перезаписать все сообщения, выполнив команду: «rake posts:rebake».'
+    affiliate_enabled: 'Включить плагин партнёрских программ. Изменив эту настройку, нужно обновить все записи командой «rake posts:rebake».'
     affiliate_amazon_ca: "Ваш партнёрский ID для amazon.ca (Канада)."
-    affiliate_amazon_cn: "Ваш партнёрский ID для amazon.c (Китай)."
+    affiliate_amazon_cn: "Ваш партнёрский ID для amazon.cn (Китай)."
     affiliate_amazon_co_jp: "Ваш партнёрский ID для amazon.co.jp (Япония)."
     affiliate_amazon_co_uk: "Ваш партнёрский ID для amazon.co.uk (Великобритания)."
     affiliate_amazon_com: "Ваш партнёрский ID для amazon.com/amzn.com (США)."
