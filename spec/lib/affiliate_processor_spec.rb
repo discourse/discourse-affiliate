@@ -54,6 +54,11 @@ describe AffiliateProcessor do
     expect(r("https://www.amazon.com/b?ie=UTF8&node=13548845011")).to eq(
       "https://www.amazon.com/b?tag=sams-shop&node=13548845011",
     )
+    
+    # keep nodeId for help pages
+    expect(r("https://www.amazon.com/gp/help/customer/display.html?nodeId=GENAFPTNLHV7ZACW")).to eq(
+      "https://www.amazon.com/gp/help/customer/display.html?tag=sams-shop&nodeId=GENAFPTNLHV7ZACW",
+    )
   end
 
   it "can apply codes to post in post processor" do
