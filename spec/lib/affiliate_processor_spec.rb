@@ -57,7 +57,7 @@ describe AffiliateProcessor do
   end
 
   it "can apply codes to post in post processor" do
-    SiteSetting.queue_jobs = false
+    Jobs.run_immediately!
     SiteSetting.affiliate_amazon_com = "sams-shop"
 
     stub_request(:get, "http://www.amazon.com/link?testing").to_return(status: 200, body: "")
