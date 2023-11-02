@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # name: discourse-affiliate
-# about: Allows the creation of Amazon affiliate links on your forum. 
+# about: Allows the creation of Amazon affiliate links on your forum.
 # meta_topic_id: 101937
 # version: 0.2
 # authors: Régis Hanol (zogstrip), Sam Saffron
