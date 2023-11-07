@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 # name: discourse-affiliate
-# about: Official affiliation plugin for Discourse
+# about: Allows the creation of Amazon affiliate links on your forum.
+# meta_topic_id: 101937
 # version: 0.2
 # authors: Régis Hanol (zogstrip), Sam Saffron
 # url: https://github.com/discourse/discourse-affiliate
