@@ -20,6 +20,7 @@ describe AffiliateProcessor do
     SiteSetting.affiliate_amazon_com = "sams-shop"
     SiteSetting.affiliate_amazon_ca = "ca-sams-shop"
     SiteSetting.affiliate_amazon_com_au = "au-sams-shop"
+    SiteSetting.affiliate_amazon_eu = "eu-sams-shop"
 
     expect(r("https://www.amazon.com")).to eq("https://www.amazon.com?tag=sams-shop")
     expect(r("http://www.amazon.com/some_product?xyz=1")).to eq(
@@ -46,6 +47,15 @@ describe AffiliateProcessor do
       ),
     ).to eq(
       "https://www.amazon.ca/Dragon-Quest-Echoes-Elusive-Age-PlayStation/dp/B07BP3J6RG/ref=br_asw_pdt-5?tag=ca-sams-shop",
+    )
+    expect(r("https://amzn.to/d/some_short_link")).to eq(
+      "https://amzn.to/d/some_short_link?tag=sams-shop"
+    )
+    expect(r("https://amzn.eu/d/some_short_link")).to eq(
+      "https://amzn.eu/d/some_short_link?tag=eu-sams-shop"
+    )
+    expect(r("https://a.co/some_short_link")).to eq(
+      "https://a.co/some_short_link?tag=sams-shop"
     )
 
     # keep node (BrowseNodeSearch) query parameter
