@@ -44,6 +44,9 @@ discourse_affiliate:
   affiliate_amazon_nl:
     default: ""
     client: true
+  affiliate_amazon_eu:
+    default: ""
+    client: true
   affiliate_ldlc_com:
     default: ""
     client: true
