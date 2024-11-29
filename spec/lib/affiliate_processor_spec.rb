@@ -49,14 +49,12 @@ describe AffiliateProcessor do
       "https://www.amazon.ca/Dragon-Quest-Echoes-Elusive-Age-PlayStation/dp/B07BP3J6RG/ref=br_asw_pdt-5?tag=ca-sams-shop",
     )
     expect(r("https://amzn.to/d/some_short_link")).to eq(
-      "https://amzn.to/d/some_short_link?tag=sams-shop"
+      "https://amzn.to/d/some_short_link?tag=sams-shop",
     )
     expect(r("https://amzn.eu/d/some_short_link")).to eq(
-      "https://amzn.eu/d/some_short_link?tag=eu-sams-shop"
+      "https://amzn.eu/d/some_short_link?tag=eu-sams-shop",
     )
-    expect(r("https://a.co/some_short_link")).to eq(
-      "https://a.co/some_short_link?tag=sams-shop"
-    )
+    expect(r("https://a.co/some_short_link")).to eq("https://a.co/some_short_link?tag=sams-shop")
 
     # keep node (BrowseNodeSearch) query parameter
     expect(r("https://www.amazon.com/b?ie=UTF8&node=13548845011")).to eq(
