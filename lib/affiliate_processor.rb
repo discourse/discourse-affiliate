@@ -14,6 +14,9 @@ class AffiliateProcessor
         if original_query_array["node"].present?
           query_array << ["node", original_query_array["node"]]
         end
+        if original_query_array["nodeId"].present?
+          query_array << ["nodeId", original_query_array["nodeId"]]
+        end
         uri.query = URI.encode_www_form(query_array)
         uri.to_s
       else
