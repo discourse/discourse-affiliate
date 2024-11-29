@@ -24,7 +24,7 @@ class AffiliateProcessor
 
   def self.rules
     return @rules if @rules
-    postfixes = %w[com com.au com.br com.mx ca cn co.jp co.uk de es fr in it nl]
+    postfixes = %w[com com.au com.br com.mx ca cn co.jp co.uk de es fr in it nl to co eu]
 
     rules = {}
 
@@ -32,6 +32,9 @@ class AffiliateProcessor
       rule = create_amazon_rule(postfix)
 
       rules["amzn.com"] = rule if postfix == "com"
+      rules["amzn.to"] = create_amazon_rule("com") if postfix == "to"
+      rules["amzn.eu"] = rule if postfix == "eu"
+      rules["a.co"] = create_amazon_rule("com") if postfix == "co"
       rules["www.amazon.#{postfix}"] = rule
       rules["smile.amazon.#{postfix}"] = rule
       rules["amazon.#{postfix}"] = rule
