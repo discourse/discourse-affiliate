@@ -11,6 +11,7 @@ fi:
     affiliate_amazon_cn: "Amazon.cn (Kiina) Associates ID:si."
     affiliate_amazon_co_jp: "Amazon.co.jp (Japani) Associates ID:si."
     affiliate_amazon_co_uk: "Amazon.co.uk (Britannia) Associates ID:si."
+    affiliate_amazon_com: "Amazon.com/amzn.com/amzn.to (Yhdysvallat) Associates ID:si."
     affiliate_amazon_com_au: "Amazon.com.au (Australia) Associates ID:si."
     affiliate_amazon_com_br: "Amazon.com.br (Brasilia) Associates ID:si."
     affiliate_amazon_com_mx: "Amazon.com.mx (Meksiko) Associates ID:si."
@@ -20,4 +21,5 @@ fi:
     affiliate_amazon_in: "Amazon.in (Intia) Associates ID:si."
     affiliate_amazon_it: "Amazon.it (Italia) Associates ID:si."
     affiliate_amazon_nl: "Amazon.nl (Alankomaat) Associates ID:si."
+    affiliate_amazon_eu: "Amzn.eu (Eurooppa) Associates ID:si."
     affiliate_ldlc_com: "ldlc.com-affiliate-tunnuksesi (ilman #-merkkiä)."
