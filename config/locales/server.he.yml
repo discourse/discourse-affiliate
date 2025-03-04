@@ -1,9 +1,3 @@
-# WARNING: Never edit this file.
-# It will be overwritten when translations are pulled from Crowdin.
-#
-# To work with us on translations, join this project:
-# https://translate.discourse.org/
-
 he:
   site_settings:
     affiliate_enabled: 'הפעלת תוסף הששותפים. שינוי הגדרה זו תאלץ אותך להכין את כל הפוסטים מחדש בעזרת: „rake posts:rebake”'
