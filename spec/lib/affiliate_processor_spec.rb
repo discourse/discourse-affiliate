@@ -5,6 +5,8 @@ describe AffiliateProcessor do
     AffiliateProcessor.apply(url)
   end
 
+  before { enable_current_plugin }
+
   it "can apply affiliate code to ldlc" do
     SiteSetting.affiliate_ldlc_com = "samsshop"
 

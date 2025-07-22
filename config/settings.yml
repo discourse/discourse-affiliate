@@ -1,6 +1,6 @@
 discourse_affiliate:
   affiliate_enabled:
-    default: true
+    default: false
     client: true
   affiliate_amazon_ca:
     default: ""
