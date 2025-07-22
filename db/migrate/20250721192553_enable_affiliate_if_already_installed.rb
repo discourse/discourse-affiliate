@@ -21,7 +21,7 @@ class EnableAffiliateIfAlreadyInstalled < ActiveRecord::Migration[7.2]
   ].freeze
 
   def up
-    p is_configured = DB.query_single(<<~SQL, CONFIG_SETTINGS)&.first
+    is_configured = DB.query_single(<<~SQL, CONFIG_SETTINGS)&.first
       SELECT 1 FROM site_settings
       WHERE name IN (?)
       AND value != ''
