@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "../../../db/migrate/20250721192553_enable_affiliate_if_already_installed"
+require_relative "../../../db/migrate/20250722101702_enable_affiliate_if_already_installed"
 
 RSpec.describe EnableAffiliateIfAlreadyInstalled do
   let(:connection) { ActiveRecord::Base.connection }
